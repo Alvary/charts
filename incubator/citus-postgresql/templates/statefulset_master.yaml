@@ -136,7 +136,7 @@ spec:
         - name: queries
           configMap:
             name: {{ template "citus-postgresql.fullname" . }}-metric-exporter-queries
-          defaultMode: 420
+            defaultMode: 420
         {{ end }}
   volumeClaimTemplates:
   - metadata:
