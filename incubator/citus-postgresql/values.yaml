@@ -18,10 +18,10 @@ worker:
   resources: {}
   #  limits:
   #    cpu: 1
-  #    memory: 15Gi
+  #    memory: 4Gi
   #  requests:
-  #    cpu: 250m
-  #    memory: 1Gi
+  #    cpu: 1
+  #    memory: 4Gi
   pvc:
     size: 50Gi
 
@@ -31,11 +31,11 @@ master:
   extraConfigs:
   resources: {}
   #  limits:
-  #    cpu: 4
-  #    memory: 15Gi
+  #    cpu: 2
+  #    memory: 8Gi
   #  requests:
-  #    cpu: 500m
-  #    memory: 1Gi
+  #    cpu: 2
+  #    memory: 8Gi
   pvc:
     size: 10Gi
 
@@ -51,6 +51,8 @@ manager:
   image: bakdata/citus-k8s-membership-manager
   imageTag: v0.3
   resources:
+    limits:
+      cpu: 100m
     requests:
       cpu: 100m
       memory: 100Mi
