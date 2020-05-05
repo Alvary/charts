@@ -37,7 +37,7 @@ spec:
         ports:
         - containerPort: {{ .Values.prometheus.port }}
         resources:
-{{ toYaml .Values.prometheus.resources | indent 12 }}
+{{ toYaml .Values.prometheus.resources | indent 10 }}
         env:
         - name: DATA_SOURCE_NAME
           value: postgresql://postgres@127.0.0.1:{{ .Values.superuser.port }}?sslmode=disable
@@ -75,7 +75,7 @@ spec:
         ports:
         - containerPort: {{ .Values.superuser.port }}
         resources:
-{{ toYaml .Values.master.resources | indent 12 }}
+{{ toYaml .Values.master.resources | indent 10 }}
         env:
         - name: PGDATA
           value: /var/lib/postgresql/data/pgdata
